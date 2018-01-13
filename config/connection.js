@@ -8,15 +8,19 @@ var connection;
 //   password: "",
 //   database: "burger_db"
 // });
-if(process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL)
-} else connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'hacktheplanet'
-  database: 'todoagain_db'
-})
+// if(process.env.JAWSDB_URL) {
+//   connection = mysql.createConnection(process.env.JAWSDB_URL)
+// } else connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'hacktheplanet'
+//   database: 'todoagain_db'
+// })
 // Make connection.
+var mysql = require('mysql');
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+
 connection.connect();
 // connection.connect(function(err) {
 //   if (err) {
